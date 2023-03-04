@@ -1,10 +1,11 @@
-# Web Development Project 2 - *Name of App Here*
+# Web Development Project 2 - Utimate Plant Parent
 
-Submitted by: **Your Name Here**
+Submitted by: jindacz(jinda zhang)
 
-This web app: **insert description**
+This web app: In this project, I will be creating a web app for flashcards! I can choose pairs of items to store in a flashcard-like format that users can then use to study, learn something new, or play a guessing game. Users will be able to study cards in a randomized order.
 
-Time spent: **X** hours spent in total
+
+Time spent: **10** hours spent in total
 
 ## Required Features
 
@@ -20,7 +21,7 @@ The following **optional** features are implemented:
 
 - [x] Cards contains images in addition to or in place of text
 - [x] Cards have different visual styles such as color based on their category
-  - [x] *visual style implemented*
+- [x] *visual style implemented*
 
 The following **additional** features are implemented:
 
@@ -45,7 +46,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2023] [name of copyright owner]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
