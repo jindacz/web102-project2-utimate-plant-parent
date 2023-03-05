@@ -1,6 +1,7 @@
 # Web Development Project 2 - Utimate Plant Parent
 
 Submitted by: jindacz(jinda zhang)
+Deploy URL: https://incredible-meringue-ac8cf3.netlify.app/
 
 This web app: In this project, I will be creating a web app for flashcards! I can choose pairs of items to store in a flashcard-like format that users can then use to study, learn something new, or play a guessing game. Users will be able to study cards in a randomized order.
 
@@ -31,7 +32,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/jindacz/web102-project2-utimate-plant-parent/blob/main/web102-proj2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...  
