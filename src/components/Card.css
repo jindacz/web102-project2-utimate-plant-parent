@@ -13,3 +13,14 @@
 	font-size: 20px;
 	text-align: center;
 }
+
+.card-content {
+	position: relative;
+}
+
+.card-image {
+	position: relative;
+	top: 30px;
+	max-width: 60%;
+	height:auto;
+}

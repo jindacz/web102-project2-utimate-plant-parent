@@ -4,8 +4,6 @@ import './Card.css'
 const Card = (props) => {
 	const {question, answer, showAnswer, onCardClick, image, category, difficulty} = props;
 
-
-
 	const getDifficultyColor = () => {
 		switch (difficulty) {
 			case 'Easy':
@@ -15,18 +13,22 @@ const Card = (props) => {
 			case 'Hard':
 				return 'red'
 			default:
-				return 'black'
+				return 'white'
 		}
 	}
 
 	const cardStyle = {
 		backgroundColor: getDifficultyColor()
 	}
-	
+
  	return (
 	  <div className='container'>
 	   <div className='card' onClick={onCardClick} style={cardStyle}>
-			<div className='card-text'>{showAnswer ? answer : question}</div>
+			<div className='card-content'>
+				
+				<div className='card-text'>{showAnswer ? answer : question}</div>
+				{image && <img src={image} alt="card image" className="card-image"/>}
+			</div>
 	   </div>
 	  </div>
 	)
