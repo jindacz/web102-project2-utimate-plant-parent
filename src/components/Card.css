@@ -1,32 +1,40 @@
 .card {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 300px;
-	width: 500px;
-	border: 2px solid #dcdcdc;
-	border-radius: 8px;
-	margin: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 300px;
+width: 500px;
+border: 2px solid #dcdcdc;
+border-radius: 8px;
+margin: 10px;
 }
 
 .card-text {
-	font-size: 20px;
-	text-align: center;
+font-size: 20px;
+text-align: center;
 }
 
 .card-content {
-	position: relative;
+position: relative;
 }
 
 .card-image {
-	position: relative;
-	top: 30px;
-	max-width: 60%;
-	height:auto;
+position: relative;
+top: 30px;
+max-width: 60%;
+height: 100px;
+margin-bottom: 60px;
 }
 
 .container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.inputSubmit {
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 20px;
 }
