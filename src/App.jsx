@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import "./App.css";
 import Card from "./components/Card";
+import stringSimilarity from "string-similarity";
 
 const cards = [
   {
@@ -53,6 +54,10 @@ const App = () => {
   const [showAnswer, setShowAnswer] = useState(false);
   const [guess, setGuess] = useState("");
   const [feedback, setFeedback] = useState(null);
+  const [shuffledCards, setShuffledCards] = useState([...cards]);
+  const [currentStreak, setCurrentStreak] = useState(0);
+  const [longestStreak, setLongestStreak] = useState(0);
+  const [masteredCards, setMasteredCards] = useState([]);
 
   const currentCard = cards[currentCardIndex];
 
@@ -70,15 +75,45 @@ const App = () => {
     setCurrentCardIndex(currentCardIndex - 1);
   };
 
+  const handleShuffleCards = () => {
+    setShuffledCards([...cards].sort(() => Math.random() - 0.5));
+    setCurrentCardIndex(0);
+  };
+
+  const handleCardMastered = () => {
+    // 将当前卡片添加到 masteredCards 列表中
+    setMasteredCards([...masteredCards, currentCard]);
+    
+    // 将当前卡片从 cards 列表中删除
+    const newCards = cards.filter(card => card !== currentCard);
+    setCards(newCards);
+  
+    // 自动跳转到下一张卡片
+    handleNextCard();
+  };
+
+
+
   const isBackDisabled = currentCardIndex === 0;
   const isNextDisabled = currentCardIndex === cards.length - 1;
 
   const handleGuessSubmit = (e) => {
     e.preventDefault();
-    if (guess.toLowerCase() === currentCard.answer.toLocaleLowerCase()) {
+
+    const similarityScore = stringSimilarity.compareTwoStrings(
+      guess.toLowerCase(),
+      currentCard.answer.toLowerCase()
+    )
+
+    if (similarityScore >= 0.6) {
       setFeedback("Correct!");
+      setCurrentStreak(currentStreak + 1);
+      if (currentStreak + 1 > longestStreak) {
+        setLongestStreak(currentStreak + 1);
+      }
     } else {
       setFeedback("Incorrect.");
+      setCurrentStreak(0);
     }
   };
 
@@ -105,12 +140,22 @@ const App = () => {
           onGuessSubmit={handleGuessSubmit}
           feedback={feedback}
         />
+         <div>
+          Current Streak: {currentStreak}
+        </div>
+        <div>
+          Longest Streak: {longestStreak}
+        </div>
+
+
         <button onClick={handleBackCard} disabled={isBackDisabled}>
           Back
         </button>
         <button onClick={handleNextCard} disabled={isNextDisabled}>
           Next
         </button>
+        <button onClick={handleShuffleCards}>Shuffle</button>
+        <button onClick={handleCardMastered}>Mark as Mastered</button>
       </div>
     </div>
   );

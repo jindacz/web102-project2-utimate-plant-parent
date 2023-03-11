@@ -14,10 +14,6 @@ const Card = (props) => {
     onGuessChange,
     onGuessSubmit,
     feedback,
-	// onBack,
-	// onNext,
-	// isBackDisabled,
-	// isNextDisabled
   } = props;
 
   const getDifficultyColor = () => {
@@ -45,14 +41,6 @@ const Card = (props) => {
           <div className="card-text">{showAnswer ? answer : question}</div>
           {image && <img src={image} alt="card image" className="card-image" />}
         </div>
-		{/* <div className="navigation-buttons">
-          <button onClick={onBack} disabled={isBackDisabled}>
-            Back
-          </button>
-          <button onClick={onNext} disabled={isNextDisabled}>
-            Next
-          </button>
-        </div> */}
       </div>
   
     </div>
